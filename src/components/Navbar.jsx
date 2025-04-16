@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import { createTheme } from "@mui/material/styles";
+import { useSelector } from "react-redux";
 
 // const theme = createTheme({
 //   palette: {
@@ -34,6 +35,8 @@ import { createTheme } from "@mui/material/styles";
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
+  const { cart } = useSelector((store) => store.cart);
+  console.log(cart);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
